@@ -179,56 +179,32 @@ a:focus, a:hover {
   height: 5px;
   border-radius: 5px;
   background: #fff;
-  -webkit-animation: preloader 2s infinite ease-in-out;
   animation: preloader 2s infinite ease-in-out;
 }
 
 .preloader span:nth-child(2) {
   left: 11px;
-  -webkit-animation-delay: 200ms;
   animation-delay: 200ms;
 }
 
 .preloader span:nth-child(3) {
   left: 22px;
-  -webkit-animation-delay: 400ms;
   animation-delay: 400ms;
 }
 
 .preloader span:nth-child(4) {
   left: 33px;
-  -webkit-animation-delay: 600ms;
   animation-delay: 600ms;
 }
 
 .preloader span:nth-child(5) {
   left: 44px;
-  -webkit-animation-delay: 800ms;
   animation-delay: 800ms;
 }
 
 .preloader span:nth-child(6) {
   left: 55px;
-  -webkit-animation-delay: 1000ms;
   animation-delay: 1000ms;
-}
-
-@-webkit-keyframes preloader {
-  0% {
-    height: 5px;
-    transform: translateY(0);
-    background: rgba(0, 0, 0, 0.1);
-  }
-  25% {
-    height: 30px;
-    transform: translateY(15px);
-    background: #28ABE3;
-  }
-  50%, 100% {
-    height: 5px;
-    transform: translateY(0);
-    background: rgba(0, 0, 0, 0.1);
-  }
 }
 @keyframes preloader {
   0% {
@@ -809,21 +785,17 @@ a:focus, a:hover {
 
 .video-section {
   height: 33vw;
-  max-height: 350px;
-  min-height: 200px;
+  max-height: 360px;
+  min-height: 180px;
   overflow: hidden;
   position: relative;
   background: black;
 }
 .video-section .bg-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-width: 640px;
 }
 
 .text-section {
@@ -882,10 +854,15 @@ a:focus, a:hover {
 }
 .about-2 .checklist li {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   font-size: 16px;
   color: #777;
   font-family: "Source Sans Pro", sans-serif;
+}
+@media (max-width: 992px) {
+  .about-2 .checklist li {
+    margin-bottom: 15px;
+  }
 }
 .about-2 .checklist li:before {
   position: absolute;
@@ -904,6 +881,14 @@ a:focus, a:hover {
 }
 .about-shot-info .container {
   padding-top: 80px;
+}
+.about-shot-info .container .img-fluid {
+  margin: auto;
+  max-height: 500px;
+}
+
+code {
+  color: #848484;
 }
 
 /*=================================================================
@@ -1104,14 +1089,20 @@ a:focus, a:hover {
   position: relative;
   z-index: 999;
 }
+.pricing-table .pricing-boxes {
+  row-gap: 30px;
+}
 .pricing-table .pricing-item {
   padding: 40px 55px 65px;
   background: #ffffff;
   margin-bottom: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .pricing-table .pricing-item a.btn-main {
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: auto;
 }
 .pricing-table .pricing-item li {
   font-weight: 400;
@@ -1129,6 +1120,10 @@ a:focus, a:hover {
   margin: 0 0 5px;
   font-size: 20px;
   text-transform: uppercase;
+  height: 100px;
+}
+.pricing-table .price-title > small {
+  display: block;
 }
 .pricing-table .price-title > p {
   font-size: 16px;
@@ -1139,10 +1134,15 @@ a:focus, a:hover {
 .pricing-table .price-title .value {
   color: #28ABE3;
   font-size: 40px;
-  padding: 10px 0;
+  padding: 10px 0 16px;
+  display: block;
 }
 .pricing-table .price-title .value-info {
   color: #28ABE3;
+}
+.pricing-table #inspection-de-toiture,
+.pricing-table #prise-de-vue-toiture {
+  scroll-margin-top: 108px;
 }
 
 /*=================================================================
@@ -1293,6 +1293,10 @@ a:focus, a:hover {
   margin-bottom: 20px;
   width: 55px;
   transition: all 0.3s ease 0s;
+}
+.service-2 .service-container .service-item .fix-position::before {
+  left: 2px;
+  position: relative;
 }
 
 /*=================================================================
